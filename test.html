@@ -33,7 +33,7 @@
 						<label class="form-check-label" for="inlineRadio2">2</label>
 					</div>
 					<div class="form-check form-check-inline">
-						<input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option3">
+						<input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option3" checked>
 						<label class="form-check-label" for="inlineRadio3">3</label>
 					</div>
 					<div class="form-check form-check-inline">
@@ -52,6 +52,21 @@
 			</div>
 			<div class="row form-group">
 				<div class="col-12 col-md-2 col-form-label">
+					<label for="section">Section</label>
+				</div>
+				<div class="col-12 col-md-10">
+					<div class="btn-group btn-group-toggle" data-toggle="buttons">
+					<label class="btn btn-success active">
+						<input type="radio" name="nSmoking" id="nSmoking" autocomplete="off" checked> Non-Smoking
+					</label>
+					<label class="btn btn-danger">
+						<input type="radio" name="smoking" id="smoking" autocomplete="off"> Smoking
+					</label>
+					</div>
+				</div>
+			</div>
+			<div class="row form-group">
+				<div class="col-12 col-md-2 col-form-label">
 					<label for="date">Date and Time</label>
 				</div>
 				<div class="col-12 col-md-3">
@@ -63,10 +78,13 @@
 			</div>
 			<div class="row form-group">
 				<div class="col-11 offset-md-2">
+					<button type="submit" class="btn btn-secondary">Cancel</button>
 					<button type="submit" class="btn btn-primary">Reserve</button>
 				</div>
 			</div>
 		</div>
+	</div>
+		
 	</div>
 
 	<script src="node_modules/jquery/dist/jquery.slim.min.js"></script>
