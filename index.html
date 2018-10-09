@@ -32,24 +32,60 @@
                     <li class="nav-item"><a href="./contactus.html" class="nav-link"><span class="fa fa-lg fa-address-card"></span>Contact</a></li>
                 </ul>
                 <span class="navbar-text">
-                    <a data-toggle="modal" data-target="#loginModal">
-                        <span class="fa fa-sign-in"></span> Login
-                    </a>
+                        <span id="modalBtnLogin"><span class="fa fa-sign-in"></span> Login</span>
                 </span>
             </div>
         </div>
     </nav>
 
-    <div id="loginModal" class="modal fade" role="dialog">
+    <div id="modalLogin" class="modal fade" role="dialog">
         <div class="modal-dialog modal-lg" role="content">
             <div class="modal-content">
-                <div class="modal-header">
-                    <h4 class="modall.title">Reserve a Table</h4>
-                    <button type="button" class="close" data-dismiss="modal">
-                        &times;
+                <div class="modal-header modalHead">
+                    <h4 class="modal.title">Login</h4>
+                    <button type="button" class="close" id="modalBtnDismiss">
+                        <span class="closeColor">&times;</span>
                     </button>
                 </div>
-                <div class="modal-body">
+                <div class="modal-body modalBody">
+                    <form>
+                        <div class="form-row">
+                            <div class="form-group col-sm-4">
+                                    <label class="sr-only" for="exampleInputEmail3">Email address</label>
+                                    <input type="email" class="form-control form-control-sm mr-1" id="exampleInputEmail3" placeholder="Enter email">
+                            </div>
+                            <div class="form-group col-sm-4">
+                                <label class="sr-only" for="exampleInputPassword3">Password</label>
+                                <input type="password" class="form-control form-control-sm mr-1" id="exampleInputPassword3" placeholder="Password">
+                            </div>
+                            <div class="col-sm-auto">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox">
+                                    <label class="form-check-label"> Remember me
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <button type="button" class="btn btn-secondary" id="modalBtnCancel">Cancel</button>
+                            <button type="submit" class="btn btn-primary btn-sm ml-1">Sign in</button>        
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="modalReserve" class="modal fade" role="dialog">
+        <div class="modal-dialog modal-lg" role="content">
+            <div class="modal-content">
+                <div class="modal-header modalHead">
+                    <h4 class="modal.title">Reserve a Table</h4>
+                    <button type="button" class="close" id="modalBtnDismiss2">
+                        <span class="closeColor">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body modalBody">
                     <div class="row form-group">
                 <div class="col-12 col-md-2 col-form-label">
                     <label for="numGuest">Number of Guests</label>
@@ -109,7 +145,7 @@
             </div>
             <div class="row form-group">
                 <div class="col-11 offset-md-2">
-                    <button type="submit" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                    <button type="button" class="btn btn-secondary" id="modalBtnCancel2">Cancel</button>
                     <button type="submit" class="btn btn-primary">Reserve</button>
                 </div>
             </div>
@@ -129,9 +165,9 @@
                     <img src="img/logo.png" class="img-fluid">
                 </div>
                 <div class="col-12 col-sm align-self-center">
-                    <a data-toggle="modal" data-target="#loginModal">
-                    <button type="button" class="btn btn-warning btn-lg btn-block">Reserve Table</button>
-                    </a>
+                    <button type="button" class="btn btn-warning btn-lg btn-block" id="modalBtnReserve">
+                        <span>Reserve Table</span>
+                    </button>
                 </div>
             </div>
         </div>
@@ -299,6 +335,48 @@
                     $("#carouselButton").children("span").addClass('fa-pause');                    
                 }
             });
+    </script>
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $('#modalBtnReserve').click(function(){
+                $('#modalReserve').modal('show');
+            });
+        });
+    </script>
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $('#modalBtnDismiss2').click(function(){
+                $('#modalReserve').modal('hide');
+            });
+        });
+    </script>
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $('#modalBtnLogin').click(function(){
+                $('#modalLogin').modal('show');
+            });
+        });
+    </script>
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $('#modalBtnDismiss').click(function(){
+                $('#modalLogin').modal('hide');
+            });
+        });
+    </script>
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $('#modalBtnCancel').click(function(){
+                $('#modalLogin').modal('hide');
+            });
+        });
+    </script>
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $('#modalBtnCancel2').click(function(){
+                $('#modalReserve').modal('hide');
+            });
+        });
     </script>
 </body>
 
